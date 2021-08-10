@@ -1,4 +1,5 @@
 export default class localStorageService {
+
     static addItem(chave, valor){
         localStorage.setItem(chave,JSON.stringify(valor))
     }
@@ -7,4 +8,8 @@ export default class localStorageService {
         let item = localStorage.getItem(chave)
         return JSON.parse(item)
     }
-}
+
+    static removerItem(chave){
+        localStorage.removeItem(chave)
+    }
+}   

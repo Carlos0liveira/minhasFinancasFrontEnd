@@ -1,7 +1,7 @@
 import React from 'react'
 import Formatter from 'currency-formatter'
 
-export default props =>{
+const lancamentoTable =  props =>{
 
     const rows = props.lancamentos.map( lancamentos => {
         return(
@@ -43,3 +43,5 @@ export default props =>{
         </table>
     )
 }
+
+export default lancamentoTable

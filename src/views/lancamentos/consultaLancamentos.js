@@ -58,7 +58,7 @@ class ConsultaLancamentos extends React.Component{
     }
 
     editar = (id) =>{
-        console.log('Editando lancamento ',id)
+        this.props.history.push(`/cadastro-lancamentos/${id}`)
     }
 
     confirmaDeletar= ( lancamento ) => {
@@ -138,7 +138,7 @@ class ConsultaLancamentos extends React.Component{
                                     </div>
 
                                     <button type="button" onClick={this.buscar} className="btn btn-success">Buscar</button>
-                                    <button type="button" className="btn btn-warning">Cadastrar</button>
+                                    <button type="button" className="btn btn-warning"  onClick={ e => this.props.history.push('/cadastro-lancamentos') } >Cadastrar</button>
                                 </div>
                             </div>
                         </div>

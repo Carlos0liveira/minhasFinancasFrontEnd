@@ -1,6 +1,13 @@
 import React from 'react';
 
 import HeaderItem from '../components/headerItem';
+import AuthService from '../app/service/authService';
+import localStorageService from '../app/service/localStorageService';
+
+const deslogar = () => {
+    AuthService.removerUsuario()
+    
+}
 
 class Header extends React.Component{
     render(){
@@ -17,10 +24,15 @@ class Header extends React.Component{
                             <ul className="navbar-nav me-auto">
                                 <HeaderItem href="#/Home" label="Inicio" />
                                 <HeaderItem href="#/consulta-lancamentos" label="Consulta Lancamentos" />
-                                <HeaderItem href="#/lancamentos" label="Lancamentos" />
+                                <HeaderItem href="#/cadastro-lancamentos" label="Lancamentos" />
                             </ul>
                             <form className="d-flex">
-                                <a className="btn btn-secondary my-2 my-sm-0" href="#/login"> Login </a>
+                                {localStorageService.getItem('_usuarioLogado') !== null ? (
+                                        <a onClick={deslogar} className="btn btn-secondary my-2 my-sm-0" href="#/login"> Deslogar </a>
+                                    ) : (
+                                        <a className="btn btn-secondary my-2 my-sm-0" href="#/login"> Login </a>
+                                    )
+                                }
                             </form>
                         </div>
                     </div>
