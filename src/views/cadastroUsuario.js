@@ -29,9 +29,9 @@ class CadastroUsuario extends React.Component{
 
         if(!this.state.email){
             msg.push('O campo email é OBRIGATÓRIO')
-        }else if( !this.state.email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i) ){
-            msg.push('O campo email precisa ser válido')
-        }
+         }//else if( !this.state.email.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i) ){
+        //     msg.push('O campo email precisa ser válido')
+        // }
 
         if(!this.state.senha || !this.state.senhaConfirmacao){
             msg.push('Senha inválida')
