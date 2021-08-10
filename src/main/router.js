@@ -31,6 +31,7 @@ function Rotes(){
     return(
         <HashRouter>
             <Switch>
+                <Route exact path="/"><Redirect to="/login"/></Route>
                 <RotaAutenticada path="/cadastro-lancamentos/:id?" component={cadastroLancamentos} />
                 <RotaAutenticada path="/consulta-lancamentos" component={consultaLancamentos} />
                 <RotaAutenticada path="/home" component={Home} />
